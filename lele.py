@@ -9,4 +9,6 @@ data={
 
 }
 frame=pd.DataFrame(data)
-print(frame['height'])
+frame.loc[1,'name']='赵春'
+print(frame)
+
