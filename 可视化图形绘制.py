@@ -1,10 +1,13 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-from pylab import mpl
-frame=pd.read_csv('股票数据.csv',encoding='GBK')
-frame=frame.set_index('日期')
-frame.index=pd.to_datetime(frame.index)
-plt.style.use('dark_background')
-plt.scatter(frame['开盘价'],frame['收盘价'],c=frame['成交量'],s=frame['换手率'],alpha=0.5)
-plt.colorbar()
+frame1=pd.read_csv('股票数据.csv',encoding='GBK')
+frame1=frame1.set_index('日期')
+frame1.index=pd.to_datetime(frame1.index)
+
+frame2=pd.read_csv('股票数据.csv',encoding='GBK')
+frame2=frame2.set_index('换手率')
+frame2.index=pd.to_datetime(frame2.index)
+
+plt.plot(frame1['最低价'])
+plt.plot(frame2['最高价'])
 plt.show()
